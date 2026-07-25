@@ -1,85 +1,116 @@
-import "./Facilities.css";
-import facilityImage from "../assets/images/facilities.jpg";
+import "./Gallery.css";
+
 import {
-  FaFlask,
-  FaBook,
-  FaFutbol,
-  FaLaptop,
-  FaPaintBrush,
-  FaBus,
+  FaArrowRight,
+  FaCamera,
+  FaImages,
 } from "react-icons/fa";
 
-const facilities = [
+import img1 from "../assets/images/gallery-1.jpg";
+import img2 from "../assets/images/gallery-2.jpg";
+import img3 from "../assets/images/gallery-3.jpg";
+import img4 from "../assets/images/gallery-4.jpg";
+
+const images = [
   {
-    icon: <FaFlask />,
-    title: "Science Labs",
-    desc: "Well-equipped laboratories for practical science learning.",
+    image: img1,
+    title: "Smart Classrooms",
+    desc: "Interactive & Digital Learning",
   },
   {
-    icon: <FaBook />,
-    title: "Digital Library",
-    desc: "A rich collection of books, journals and digital resources.",
+    image: img2,
+    title: "Campus Activities",
+    desc: "Learning Beyond Books",
   },
   {
-    icon: <FaFutbol />,
-    title: "Sports Arena",
-    desc: "Indoor and outdoor sports facilities for every student.",
+    image: img3,
+    title: "Sports Excellence",
+    desc: "Fitness • Teamwork • Leadership",
   },
   {
-    icon: <FaLaptop />,
-    title: "Computer Lab",
-    desc: "Modern systems with high-speed internet and coding practice.",
-  },
-  {
-    icon: <FaPaintBrush />,
-    title: "Creative Arts",
-    desc: "Music, dance, drawing and cultural activity programmes.",
-  },
-  {
-    icon: <FaBus />,
-    title: "Safe Transport",
-    desc: "GPS-enabled buses with trained staff for student safety.",
+    image: img4,
+    title: "Creative Events",
+    desc: "Innovation & Student Talent",
   },
 ];
 
-const Facilities = () => {
+const Gallery = () => {
   return (
-    <section className="facilities" id="facilities">
-      <div className="facilities-container">
+    <section className="gallery" id="gallery">
 
-        <div className="facilities-title">
-          <span>OUR FACILITIES</span>
-          <h2>Everything Students Need to Succeed</h2>
-          <p>
-            Our campus provides world-class facilities that encourage
-            learning, creativity and overall student development.
-          </p>
-        </div>
+      <div className="gallery-blur gallery-blur-one"></div>
+      <div className="gallery-blur gallery-blur-two"></div>
 
-        <div className="facilities-content">
+      <div className="gallery-container">
 
-          <div className="facilities-image">
-            <img src={facilityImage} alt="School Facilities" />
+        <div className="gallery-header">
+
+          <div className="gallery-tag">
+
+            <FaImages />
+
+            <span>OUR GALLERY</span>
+
           </div>
 
-          <div className="facilities-grid">
-            {facilities.map((item, index) => (
-              <div className="facility-card" key={index}>
-                <div className="facility-icon">
-                  {item.icon}
+          <h2 className="gallery-title">
+
+            Capturing Every
+            <span> Memorable</span>
+            <br />
+            Moment Of
+            <span> School Life.</span>
+
+          </h2>
+
+          <p className="gallery-description">
+            Explore our vibrant campus where education, creativity,
+            innovation and unforgettable experiences come together to
+            shape future leaders.
+          </p>
+
+        </div>
+
+        <div className="gallery-grid">
+
+          {images.map((item, index) => (
+
+            <div className="gallery-card" key={index}>
+
+              <img src={item.image} alt={item.title} />
+
+              <div className="gallery-overlay">
+
+                <div className="gallery-icon">
+
+                  <FaCamera />
+
                 </div>
 
                 <h3>{item.title}</h3>
+
                 <p>{item.desc}</p>
+
+                <span>
+
+                  View More
+
+                  <FaArrowRight />
+
+                </span>
+
               </div>
-            ))}
-          </div>
+
+            </div>
+
+          ))}
 
         </div>
 
       </div>
+
     </section>
   );
 };
 
-export default Facilities;
+export default Gallery;

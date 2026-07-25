@@ -1,13 +1,14 @@
 import "./Footer.css";
 import {
+  FaArrowUp,
+  FaEnvelope,
   FaFacebookF,
+  FaGraduationCap,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaArrowUp,
+  FaPhoneAlt,
+  FaYoutube,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -21,19 +22,27 @@ const Footer = () => {
   return (
     <footer className="footer">
 
+      <div className="footer-blur footer-blur-one"></div>
+      <div className="footer-blur footer-blur-two"></div>
+
       <div className="footer-container">
 
-        {/* Logo */}
+        <div className="footer-about">
 
-        <div className="footer-col">
+          <div className="footer-logo">
 
-          <h2 className="footer-logo">
-            Bright<span>Future</span>
-          </h2>
+            <FaGraduationCap />
+
+            <h2>
+              Bright<span>Future</span>
+            </h2>
+
+          </div>
 
           <p>
-            Empowering young minds through innovation,
-            creativity and academic excellence for a brighter future.
+            Empowering students through innovation, creativity,
+            academic excellence and lifelong learning in a safe,
+            inspiring and future-ready environment.
           </p>
 
           <div className="social-links">
@@ -58,43 +67,43 @@ const Footer = () => {
 
         </div>
 
-        {/* Links */}
-
-        <div className="footer-col">
+        <div className="footer-links">
 
           <h3>Quick Links</h3>
 
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#academics">Academics</a>
+          <a href="#facilities">Facilities</a>
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
 
         </div>
 
-        {/* Contact */}
+        <div className="footer-contact">
 
-        <div className="footer-col">
+          <h3>Get In Touch</h3>
 
-          <h3>Contact</h3>
-
-          <div className="footer-contact">
+          <div className="contact-row">
 
             <FaMapMarkerAlt />
+
             <span>Chennai, Tamil Nadu</span>
 
           </div>
 
-          <div className="footer-contact">
+          <div className="contact-row">
 
             <FaPhoneAlt />
+
             <span>+91 98765 43210</span>
 
           </div>
 
-          <div className="footer-contact">
+          <div className="contact-row">
 
             <FaEnvelope />
+
             <span>info@brightfuture.com</span>
 
           </div>
@@ -102,8 +111,6 @@ const Footer = () => {
         </div>
 
       </div>
-
-      <hr />
 
       <div className="footer-bottom">
 
@@ -115,13 +122,15 @@ const Footer = () => {
           className="scroll-top"
           onClick={scrollTop}
         >
+
           <FaArrowUp />
+
         </button>
 
       </div>
 
     </footer>
-  );
+      );
 };
 
 export default Footer;

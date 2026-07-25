@@ -35,15 +35,17 @@ const Academics = () => {
     <section className="academics" id="academics">
       <div className="academics-container">
 
+          <span className="academics-tag">
+            ACADEMIC PROGRAMMES
+          </span>
+
         <div className="academics-image">
           <img src={academicsImage} alt="Academics" />
         </div>
 
         <div className="academics-content">
 
-          <span className="academics-tag">
-            ACADEMIC PROGRAMMES
-          </span>
+        
 
           <h2>
             Empowering Every Student to

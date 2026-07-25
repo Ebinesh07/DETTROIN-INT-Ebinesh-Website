@@ -1,64 +1,137 @@
 import "./Hero.css";
 import heroImage from "../assets/images/hero-students.png";
+import {
+  FaArrowRight,
+  FaGraduationCap,
+  FaAward,
+  FaUsers,
+} from "react-icons/fa";
 
 const Hero = () => {
   return (
     <section className="hero" id="home">
+
+      <div className="hero-blur hero-blur-one"></div>
+      <div className="hero-blur hero-blur-two"></div>
+
       <div className="hero-container">
+
+        {/* LEFT */}
 
         <div className="hero-content">
 
-          <span className="hero-badge">
-            ⭐ Excellence in Education
-          </span>
+          <div className="hero-top-badge">
+            <FaAward />
+            <span>Trusted by 1200+ Families Since 1999</span>
+          </div>
 
-          <h1>
-            Inspiring Young Minds,
-            <span> Creating Future Leaders.</span>
+          <h1 className="hero-title">
+            Inspiring
+            <span> Young Minds</span>
+            <br />
+            Building
+            <span> Future Leaders.</span>
           </h1>
 
-          <p>
-            We provide world-class education through innovation,
-            creativity and values that prepare students for a
-            successful future.
+          <p className="hero-description">
+            We nurture curiosity, creativity and confidence through
+            world-class education, innovative learning methods and
+            values that empower every child to achieve excellence.
           </p>
 
           <div className="hero-buttons">
-            <a href="#admission" className="primary-btn">
+
+            <a href="#admission" className="hero-primary-btn">
               Apply Now
+              <FaArrowRight />
             </a>
 
-            <a href="#about" className="secondary-btn">
+            <a href="#about" className="hero-secondary-btn">
               Explore Campus
             </a>
+
           </div>
 
           <div className="hero-stats">
 
-            <div className="stat-card">
-              <h3>1200+</h3>
-              <span>Students</span>
-                       </div>
+            <div className="hero-stat-card">
 
-            <div className="stat-card">
-              <h3>25+</h3>
-              <span>Years of Excellence</span>
+              <h2>1200+</h2>
+
+              <span>Students</span>
+
             </div>
 
-            <div className="stat-card">
-              <h3>100%</h3>
+            <div className="hero-stat-card">
+
+              <h2>25+</h2>
+
+              <span>Years of Excellence</span>
+
+            </div>
+
+            <div className="hero-stat-card">
+
+              <h2>100%</h2>
+
               <span>Student Success</span>
+
             </div>
 
           </div>
 
         </div>
 
-        <div className="hero-image">
-          <img src={heroImage} alt="Students" />
+        {/* RIGHT */}
+
+        <div className="hero-image-wrapper">
+
+          <div className="hero-image-card">
+
+            <img
+              src={heroImage}
+              alt="Students"
+              className="hero-image"
+            />
+
+          </div>
+
+          <div className="floating-card floating-card-one">
+
+            <div className="floating-icon">
+              <FaGraduationCap />
+            </div>
+
+            <div>
+
+              <h4>Academic Excellence</h4>
+
+              <p>Future Ready Curriculum</p>
+
+            </div>
+
+          </div>
+
+          <div className="floating-card floating-card-two">
+
+            <div className="floating-icon">
+              <FaUsers />
+            </div>
+
+            <div>
+
+              <h4>98% Parent Satisfaction</h4>
+
+              <p>Safe & Smart Campus</p>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
+
     </section>
   );
 };

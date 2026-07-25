@@ -1,65 +1,118 @@
 import "./About.css";
 import aboutImage from "../assets/images/about-school.jpg";
+import { FaArrowRight, FaAward, FaBookOpen, FaUserGraduate } from "react-icons/fa";
 
 const About = () => {
   return (
     <section className="about" id="about">
+
+      <div className="about-blur about-blur-one"></div>
+      <div className="about-blur about-blur-two"></div>
+
       <div className="about-container">
 
-        <div className="about-image">
-          <img src={aboutImage} alt="School Campus" />
+        <div className="about-image-wrapper">
+
+          <div className="about-image-card">
+
+                   <div className="section-tag">
+
+            <FaAward />
+
+            <span>ABOUT OUR SCHOOL</span>
+
+          </div>
+
+
+            <img
+              src={aboutImage}
+              alt="School Campus"
+              className="about-image"
+            />
+
+          </div>
+
+          <div className="experience-card">
+
+            <h2>25+</h2>
+
+            <span>Years of Excellence</span>
+
+          </div>
+
         </div>
 
         <div className="about-content">
 
-          <span className="section-tag">
-            ABOUT OUR SCHOOL
-          </span>
-
-          <h2>
-            Building Bright Futures Through
-            <span> Quality Education</span>
+   
+          <h2 className="about-title">
+            Inspiring
+            <span> Excellence</span>
+            <br />
+            Empowering
+            <span> Every Student.</span>
           </h2>
 
-          <p>
-            Our school is committed to providing an inspiring learning
-            environment where every student develops academically,
-            socially and personally. We combine innovative teaching,
-            modern facilities and strong values to prepare students
-            for a successful future.
+          <p className="about-description">
+            We provide an inspiring learning environment where every
+            student grows academically, creatively and personally.
+            Through innovative teaching, world-class facilities and
+            strong values, we prepare young minds to lead the future
+            with confidence.
           </p>
 
-         <div className="about-features">
+          <div className="about-features">
 
-  <div className="feature">
-    <i className="bi bi-check-circle-fill"></i>
-    <span>Experienced & Caring Teachers</span>
-  </div>
+            <div className="feature-card">
 
-  <div className="feature">
-    <i className="bi bi-check-circle-fill"></i>
-    <span>Smart Digital Classrooms</span>
-  </div>
+              <div className="feature-icon">
 
-  <div className="feature">
-    <i className="bi bi-check-circle-fill"></i>
-    <span>Modern Sports Facilities</span>
-  </div>
+                <FaBookOpen />
 
-  <div className="feature">
-    <i className="bi bi-check-circle-fill"></i>
-    <span>Safe & Secure Campus</span>
-  </div>
+              </div>
 
-</div>
+              <div>
+
+                <h4>Innovative Learning</h4>
+
+                <p>Smart classrooms with modern teaching methods.</p>
+
+              </div>
+
+            </div>
+
+            <div className="feature-card">
+
+              <div className="feature-icon">
+
+                <FaUserGraduate />
+
+              </div>
+
+              <div>
+
+                <h4>Student Success</h4>
+
+                <p>Building confidence, creativity and leadership.</p>
+
+              </div>
+
+            </div>
+
+          </div>
 
           <a href="#academics" className="about-btn">
+
             Learn More
+
+            <FaArrowRight />
+
           </a>
 
         </div>
 
       </div>
+
     </section>
   );
 };

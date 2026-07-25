@@ -1,0 +1,128 @@
+.loader-show{
+    opacity:1;
+    transform:scale(1);
+    transition:all .6s ease;
+}
+
+.loader-hide{
+    opacity:0;
+    transform:scale(1.05);
+    transition:all .6s ease;
+    pointer-events:none;
+}
+
+.page-hide{
+    opacity:0;
+    transform:translateY(20px);
+    transition:all .8s ease;
+}
+
+.page-show{
+    opacity:1;
+    transform:translateY(0);
+    transition:all .8s ease;
+}
+
+.reveal{
+    opacity:0;
+    transition:all .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+}
+
+.fade-up{
+    transform:translateY(70px);
+}
+
+.fade-up.active{
+    transform:translateY(0);
+}
+
+.fade-left{
+    transform:translateX(-80px);
+}
+
+.fade-left.active{
+    transform:translateX(0);
+}
+
+.fade-right{
+    transform:translateX(80px);
+}
+
+.fade-right.active{
+    transform:translateX(0);
+}
+
+.zoom-in{
+    transform:scale(.9);
+}
+
+.zoom-in.active{
+    transform:scale(1);
+}
+
+.fade-down{
+    transform:translateY(-70px);
+}
+
+.fade-down.active{
+    transform:translateY(0);
+}
+.stagger>*{
+    opacity:0;
+    transform:translateY(60px);
+}
+
+.stagger.active>*{
+    animation:staggerAnimation .8s ease forwards;
+}
+
+.stagger.active>*:nth-child(1){
+    animation-delay:.1s;
+}
+
+.stagger.active>*:nth-child(2){
+    animation-delay:.25s;
+}
+
+.stagger.active>*:nth-child(3){
+    animation-delay:.4s;
+}
+
+.stagger.active>*:nth-child(4){
+    animation-delay:.55s;
+}
+
+.stagger.active>*:nth-child(5){
+    animation-delay:.7s;
+}
+
+.stagger.active>*:nth-child(6){
+    animation-delay:.85s;
+}
+
+@keyframes staggerAnimation{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+.magnetic-btn{
+    transition:transform .25s ease;
+    cursor:pointer;
+    will-change:transform;
+}
+
+.magnetic-btn:hover{
+    box-shadow:0 15px 40px rgba(37,99,235,.35);
+}

@@ -3,10 +3,13 @@ import "./Contact.css";
 import contactImage from "../assets/images/contact-school.jpg";
 
 import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
+  FaArrowRight,
   FaClock,
+  FaEnvelope,
+  FaGraduationCap,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaPhoneAlt,
 } from "react-icons/fa";
 
 const Contact = () => {
@@ -66,7 +69,7 @@ const Contact = () => {
     e.preventDefault();
 
     if (validate()) {
-      setSuccess("✅ Your message has been sent successfully!");
+      setSuccess("Your message has been sent successfully!");
 
       setFormData({
         name: "",
@@ -83,64 +86,138 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
+
+      <div className="contact-blur contact-blur-one"></div>
+      <div className="contact-blur contact-blur-two"></div>
+
       <div className="contact-container">
 
         <div className="contact-info">
 
-          <span className="contact-tag">
-            CONTACT US
-          </span>
+          <div className="contact-tag">
 
-          <h2>
-            Let's Build Your Child's Bright Future
+            <FaGraduationCap />
+
+            <span>CONTACT US</span>
+
+          </div>
+
+          <h2 className="contact-title">
+
+            Let's Build Your Child's
+            <span> Bright Future.</span>
+
           </h2>
 
-          <p>
-            Have questions about admissions or our programmes?
-            Get in touch with us and our team will be happy to help.
+          <p className="contact-description">
+            Have questions about admissions, academics or campus life?
+            Our team is always ready to guide you and help you make the
+            right choice for your child's future.
           </p>
 
-          <div className="contact-item">
-            <FaMapMarkerAlt className="contact-icon" />
-            <div>
-              <h4>Address</h4>
-              <p>123 Education Street, Chennai, Tamil Nadu</p>
-            </div>
-          </div>
+          <div className="contact-list">
 
-          <div className="contact-item">
-            <FaPhoneAlt className="contact-icon" />
-            <div>
-              <h4>Phone</h4>
-              <p>+91 98765 43210</p>
-            </div>
-          </div>
+            <div className="contact-item">
 
-          <div className="contact-item">
-            <FaEnvelope className="contact-icon" />
-            <div>
-              <h4>Email</h4>
-              <p>info@brightfuture.com</p>
-            </div>
-          </div>
+              <div className="contact-icon">
 
-          <div className="contact-item">
-            <FaClock className="contact-icon" />
-            <div>
-              <h4>Working Hours</h4>
-              <p>Monday - Saturday | 8:00 AM - 5:00 PM</p>
+                <FaMapMarkerAlt />
+
+              </div>
+
+              <div>
+
+                <h4>Campus Address</h4>
+
+                <p>123 Education Street, Chennai, Tamil Nadu</p>
+
+              </div>
+
             </div>
+
+            <div className="contact-item">
+
+              <div className="contact-icon">
+
+                <FaPhoneAlt />
+
+              </div>
+
+              <div>
+
+                <h4>Call Us</h4>
+
+                <p>+91 98765 43210</p>
+
+              </div>
+
+            </div>
+
+            <div className="contact-item">
+
+              <div className="contact-icon">
+
+                <FaEnvelope />
+
+              </div>
+
+              <div>
+
+                <h4>Email</h4>
+
+                <p>info@brightfuture.com</p>
+
+              </div>
+
+            </div>
+
+            <div className="contact-item">
+
+              <div className="contact-icon">
+
+                <FaClock />
+
+              </div>
+
+              <div>
+
+                <h4>Working Hours</h4>
+
+                <p>Monday - Saturday | 8:00 AM - 5:00 PM</p>
+
+              </div>
+
+            </div>
+
           </div>
 
         </div>
 
         <div className="contact-form-wrapper">
 
-          <img
-            src={contactImage}
-            alt="School"
-            className="contact-image"
-          />
+          <div className="contact-image-card">
+
+            <img
+              src={contactImage}
+              alt="School"
+              className="contact-image"
+            />
+
+          </div>
+
+          <div className="contact-floating-card">
+
+            <FaGraduationCap />
+
+            <div>
+
+              <h4>Admissions Open</h4>
+
+              <span>Enroll Today</span>
+
+            </div>
+
+          </div>
 
           <form
             className="contact-form"
@@ -150,14 +227,12 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
             />
 
-            {errors.name && (
-              <small>{errors.name}</small>
-            )}
+            {errors.name && <small>{errors.name}</small>}
 
             <input
               type="email"
@@ -167,9 +242,7 @@ const Contact = () => {
               onChange={handleChange}
             />
 
-            {errors.email && (
-              <small>{errors.email}</small>
-            )}
+            {errors.email && <small>{errors.email}</small>}
 
             <input
               type="text"
@@ -179,29 +252,33 @@ const Contact = () => {
               onChange={handleChange}
             />
 
-            {errors.phone && (
-              <small>{errors.phone}</small>
-            )}
+            {errors.phone && <small>{errors.phone}</small>}
 
             <textarea
               rows="5"
               name="message"
-              placeholder="Your Message"
+              placeholder="Write Your Message"
               value={formData.message}
               onChange={handleChange}
             />
 
-            {errors.message && (
-              <small>{errors.message}</small>
-            )}
+            {errors.message && <small>{errors.message}</small>}
 
             <button type="submit">
+
+              <FaPaperPlane />
+
               Send Message
+
+              <FaArrowRight />
+
             </button>
 
             {success && (
               <div className="success-message">
+
                 {success}
+
               </div>
             )}
 
@@ -210,6 +287,7 @@ const Contact = () => {
         </div>
 
       </div>
+
     </section>
   );
 };

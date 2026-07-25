@@ -1,61 +1,132 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/images/logo.png";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
+import { FiArrowUpRight } from "react-icons/fi";
+
+const links = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "academics", label: "Academics" },
+  { id: "facilities", label: "Facilities" },
+  { id: "gallery", label: "Gallery" },
+  { id: "contact", label: "Contact" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
+      setScrolled(window.scrollY > 40);
+
+      const sections = links.map((link) =>
+        document.getElementById(link.id)
+      );
+
+      const scrollPos = window.scrollY + 140;
+
+      sections.forEach((section) => {
+        if (!section) return;
+
+        if (
+          scrollPos >= section.offsetTop &&
+          scrollPos < section.offsetTop + section.offsetHeight
+        ) {
+          setActive(section.id);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="container">
+    <>
+      {menuOpen && (
+        <div
+          className="nav-overlay"
+          onClick={closeMenu}
+        ></div>
+      )}
 
-        <a href="#" className="logo">
-          <img src={logo} alt="School Logo" />
-        </a>
+      <header
+        className={`navbar ${
+          scrolled ? "navbar-scrolled" : ""
+        }`}
+      >
+        <div className="nav-container">
 
-        <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
-          <a href="#home" onClick={closeMenu}>Home</a>
-          <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#academics" onClick={closeMenu}>Academics</a>
-          <a href="#facilities" onClick={closeMenu}>Facilities</a>
-          <a href="#gallery" onClick={closeMenu}>Gallery</a>
-          <a href="#contact" onClick={closeMenu}>Contact</a>
+          <a href="#home" className="logo">
+            <img src={logo} alt="School Logo" />
+          </a>
+
+          <nav
+            className={`nav-links ${
+              menuOpen ? "show-menu" : ""
+            }`}
+          >
+            {links.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={closeMenu}
+                className={
+                  active === item.id ? "active-link" : ""
+                }
+              >
+                {item.label}
+              </a>
+            ))}
+
+            <a
+              href="#admission"
+              className="mobile-admission"
+              onClick={closeMenu}
+            >
+              Admission Open
+              <FiArrowUpRight />
+            </a>
+          </nav>
 
           <a
             href="#admission"
-            className="admission-btn mobile-btn"
-            onClick={closeMenu}
+            className="desktop-admission"
           >
             Admission Open
+            <FiArrowUpRight />
           </a>
-        </nav>
 
-        <a href="#admission" className="admission-btn desktop-btn">
-          Admission Open
-        </a>
+          <button
+            className="menu-toggle"
+            onClick={() =>
+              setMenuOpen(!menuOpen)
+            }
+          >
+            {menuOpen ? (
+              <IoClose />
+            ) : (
+              <HiOutlineMenuAlt3 />
+            )}
+          </button>
 
-        <button
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <i className={menuOpen ? "bi bi-x-lg" : "bi bi-list"}></i>
-        </button>
-
-      </div>
-    </header>
+        </div>
+      </header>
+    </>
   );
 };
 
