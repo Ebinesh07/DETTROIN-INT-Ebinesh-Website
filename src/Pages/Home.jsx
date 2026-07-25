@@ -1,6 +1,7 @@
 import About from "../Components/About";
 import Academics from "../Components/Academics";
 import Admission from "../Components/Admission";
+import Contact from "../Components/Contact";
 import Facilities from "../Components/Facilities";
 import Gallery from "../Components/Gallery";
 import Hero from "../components/Hero";
@@ -22,6 +23,7 @@ const Home = () => {
       <Gallery/>
       <Testimonials/>
       <Admission/>
+      <Contact/>
     </>
   );
 };
