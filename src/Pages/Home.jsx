@@ -3,6 +3,7 @@ import Academics from "../Components/Academics";
 import Admission from "../Components/Admission";
 import Contact from "../Components/Contact";
 import Facilities from "../Components/Facilities";
+import Footer from "../Components/Footer";
 import Gallery from "../Components/Gallery";
 import Hero from "../components/Hero";
 import Navbar from "../Components/Navbar";
@@ -24,6 +25,7 @@ const Home = () => {
       <Testimonials/>
       <Admission/>
       <Contact/>
+      <Footer/>
     </>
   );
 };
