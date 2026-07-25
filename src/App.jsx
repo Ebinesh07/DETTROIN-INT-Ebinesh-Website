@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-import LoadingScreen from "./components/LoadingScreen";
+import LoadingScreen from "./Components/LoadingScreen";
 import Home from "./Pages/Home";
 
-import ScrollReveal from "./components/ScrollReveal";
+import ScrollReveal from "./Components/ScrollReveal";
 
 function App() {
 
@@ -29,33 +29,20 @@ function App() {
   }, []);
 
   return (
-    <>
+  <>
+    <ScrollReveal />
 
-      {loading && (
-        <div className={hideLoader ? "loader-hide" : "loader-show"}>
-          <LoadingScreen />
-        </div>
-      )}
-
-      <div className={loading ? "page-hide" : "page-show"}>
-
-         <ScrollReveal />
-
-  {loading && (
-    <div className={hideLoader ? "loader-hide" : "loader-show"}>
-      <LoadingScreen />
-    </div>
-  )}
-
-  <div className={loading ? "page-hide" : "page-show"}></div>
-        <Home />
+    {loading && (
+      <div className={hideLoader ? "loader-hide" : "loader-show"}>
+        <LoadingScreen />
       </div>
+    )}
 
-
-      
-
-    </>
-  );
+    <div className={loading ? "page-hide" : "page-show"}>
+      <Home />
+    </div>
+  </>
+);
 }
 
 export default App;
