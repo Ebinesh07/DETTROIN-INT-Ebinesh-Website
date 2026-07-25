@@ -1,12 +1,13 @@
+import Hero from "../components/Hero";
 import Navbar from "../Components/Navbar";
-// import Hero from "../Components/Hero";
+
 // later other components...
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      {/* <Hero /> */}
+      <Hero/>
     </>
   );
 };
