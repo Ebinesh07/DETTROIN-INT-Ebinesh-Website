@@ -4,6 +4,7 @@ import Facilities from "../Components/Facilities";
 import Gallery from "../Components/Gallery";
 import Hero from "../components/Hero";
 import Navbar from "../Components/Navbar";
+import Testimonials from "../Components/Testimonials";
 import WhyChoose from "../Components/Whychooseus";
 
 // later other components...
@@ -18,6 +19,7 @@ const Home = () => {
       <Academics/>
       <Facilities/>
       <Gallery/>
+      <Testimonials/>
     </>
   );
 };
