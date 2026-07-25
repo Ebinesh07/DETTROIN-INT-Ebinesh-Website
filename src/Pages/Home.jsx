@@ -1,4 +1,5 @@
 import About from "../Components/About";
+import Academics from "../Components/Academics";
 import Hero from "../components/Hero";
 import Navbar from "../Components/Navbar";
 import WhyChoose from "../Components/Whychooseus";
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero/>
       <About/>
       <WhyChoose/>
+      <Academics/>
     </>
   );
 };
