@@ -1,5 +1,6 @@
 import About from "../Components/About";
 import Academics from "../Components/Academics";
+import Facilities from "../Components/Facilities";
 import Hero from "../components/Hero";
 import Navbar from "../Components/Navbar";
 import WhyChoose from "../Components/Whychooseus";
@@ -14,6 +15,7 @@ const Home = () => {
       <About/>
       <WhyChoose/>
       <Academics/>
+      <Facilities/>
     </>
   );
 };
