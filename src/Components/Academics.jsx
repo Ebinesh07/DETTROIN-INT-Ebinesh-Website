@@ -1,5 +1,5 @@
 import "./Academics.css";
-import academicsImage from "../assets/images/academics.jpg";
+import academicsImage from "../assets/Images/academics.jpg";
 import {
   FaBookOpen,
   FaFlask,

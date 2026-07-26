@@ -1,5 +1,5 @@
 import "./Hero.css";
-import heroImage from "../assets/images/hero-students.png";
+import heroImage from "../assets/Images/hero-students.png";
 import {
   FaArrowRight,
   FaGraduationCap,

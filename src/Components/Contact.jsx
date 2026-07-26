@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Contact.css";
-import contactImage from "../assets/images/contact-school.jpg";
+import contactImage from "../assets/Images/contact-school.jpg";
 
 import {
   FaArrowRight,
