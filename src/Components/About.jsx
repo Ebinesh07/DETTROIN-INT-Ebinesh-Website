@@ -1,5 +1,5 @@
 import "./About.css";
-import aboutImage from "../assets/images/about-school.jpg";
+import aboutImage from "../assets/Images/about-school.jpg";
 import { FaArrowRight, FaAward, FaBookOpen, FaUserGraduate } from "react-icons/fa";
 
 const About = () => {
