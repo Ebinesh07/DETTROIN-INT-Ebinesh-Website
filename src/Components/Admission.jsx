@@ -1,5 +1,5 @@
 import "./Admission.css";
-import admissionImage from "../assets/images/admission.jpg";
+import admissionImage from "../assets/Images/admission.jpg";
 import {
   FaArrowRight,
   FaCalendarCheck,

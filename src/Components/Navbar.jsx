@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/Images/logo.png";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
